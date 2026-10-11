@@ -19,4 +19,9 @@ public class Car {
     private Double pricePerDay;
     private String about;
     private String city;
+    private Double lat;
+    private Double lng;
+    private String image;
+    private String owner;
+    BookedDto[] bookedDto;
 }
