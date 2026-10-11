@@ -1,7 +1,6 @@
 package utils;
 
 import dto.Car;
-import enums.Fuel;
 import net.datafaker.Faker;
 
 import java.time.LocalDate;
@@ -17,7 +16,7 @@ public class CarFactory {
                 .model(faker.vehicle().model())
                 .year(Integer.toString(faker.number().numberBetween(0,
                         LocalDate.now().getYear())))
-                .fuel(faker.options().option(Fuel.values()))
+                .fuel(faker.vehicle().fuelType())
                 .seats(faker.number().numberBetween(2, 20))
                 .carClass(faker.vehicle().carType())
                 .pricePerDay(faker.number()
@@ -26,17 +25,4 @@ public class CarFactory {
                 .build();
     }
 
-    public static Car negativeBlankAllFieldsCar(){
-        return Car.builder()
-                .serialNumber("")
-                .city("")
-                .manufacture("")
-                .model("")
-                .year("")
-                .seats(null)
-                .carClass("")
-                .pricePerDay(null)
-                .about("")
-                .build();
-    }
 }
