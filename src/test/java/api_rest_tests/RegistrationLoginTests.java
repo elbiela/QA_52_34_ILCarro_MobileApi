@@ -151,7 +151,7 @@ public class RegistrationLoginTests extends AuthenticationController {
     @Test
     public void loginNegativeWrongFormatTest() {
         User user = positiveLoginUser();
-        Assert.assertEquals(registrationLoginWithTextContentType(user, REGISTRATION_URL).getStatusCode(), 500);
+        Assert.assertEquals(registrationLoginWithTextContentType(user, LOGIN_URL).getStatusCode(), 500);
     }
 
 }
