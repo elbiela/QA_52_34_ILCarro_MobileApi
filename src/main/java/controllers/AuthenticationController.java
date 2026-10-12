@@ -16,4 +16,13 @@ public class AuthenticationController implements BaseApi {
                 .post(BASE_URL+url)
                 .andReturn();
     }
+
+    public Response registrationLoginWithTextContentType(User user,String url) {
+        return given()
+                .body(url)
+                .contentType(ContentType.TEXT)
+                .when()
+                .post(BASE_URL + REGISTRATION_URL)
+                .andReturn();
+    }
 }
